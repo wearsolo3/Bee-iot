@@ -7,8 +7,20 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Humidity Monitor</h1>
-  <div id="humidity-display">Loading...</div>
+  <div class="container">
+    <header>
+      <h1>Humidity Monitor</h1>
+    </header>
+    <main>
+      <div class="dial">
+        <div class="dial-value" id="humidity-display">Loading...</div>
+        <div class="dial-label">Humidity</div>
+      </div>
+      <div class="details">
+        <div class="detail-item">Current Humidity: <span id="current-humidity">--%</span></div>
+      </div>
+    </main>
+  </div>
   <script src="app.js"></script>
 </body>
 </html>

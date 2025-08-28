@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const humidityDisplay = document.getElementById("humidity-display");
+  const currentHumidity = document.getElementById("current-humidity");
 
   // Fetch humidity data from ESP32 server
   async function fetchHumidity() {
@@ -10,12 +11,14 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       const data = await response.json();
       if (data.humidity !== undefined) {
-        humidityDisplay.textContent = `Humidity: ${data.humidity.toFixed(2)}%`;
+        humidityDisplay.textContent = `${data.humidity.toFixed(2)}%`;
+        currentHumidity.textContent = `${data.humidity.toFixed(2)}%`;
       } else {
         throw new Error("Invalid data format");
       }
     } catch (error) {
       humidityDisplay.textContent = "Error fetching data";
+      currentHumidity.textContent = "--%";
       console.error("Error:", error);
     }
   }
