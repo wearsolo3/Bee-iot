@@ -4,6 +4,7 @@ body {
   padding: 0;
   background-color: #fff8e1; /* Bright yellow theme */
   color: #333;
+  overflow: hidden; /* Prevent scrolling */
 }
 
 .container {
@@ -15,13 +16,40 @@ body {
 }
 
 header {
-  text-align: center;
-  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #ffcc00; /* Yellow accent */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed; /* Fix header to the top */
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
-h1 {
-  font-size: 2rem;
-  color: #ffcc00; /* Yellow accent */
+.back-button, .menu-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.header-text {
+  text-align: center;
+}
+
+.header-text h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.header-text p {
+  margin: 0;
+  font-size: 1rem;
+  color: #666;
 }
 
 .dial {
@@ -35,6 +63,8 @@ h1 {
   justify-content: center;
   background-color: #fff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 0; /* Center the dial vertically */
+  margin-left: 70px; /* Move the dial further to the right */
 }
 
 .dial-value {
@@ -45,18 +75,85 @@ h1 {
 
 .dial-label {
   position: absolute;
-  bottom: -30px;
+  bottom: -50px; /* Increase spacing below the dial */
   font-size: 1rem;
   color: #333;
 }
 
 .details {
-  margin-top: 20px;
-  font-size: 1.2rem;
+  margin-top: 80px; /* Move the details section further down */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 .detail-item {
-  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  font-size: 1.2rem;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.detail-label {
+  font-weight: bold;
+  color: #333;
+}
+
+.detail-value {
+  color: #ffcc00; /* Yellow accent */
+}
+
+.detail-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.control-button {
+  background-color: #ffcc00; /* Yellow accent */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.control-button:hover {
+  background-color: #e6b800; /* Slightly darker yellow */
+}
+
+/* Position buttons between the top bar and the circular dial */
+.circular-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Adjust gap between buttons */
+  margin-top: 80px; /* Position buttons below the top bar but above the dial */
+  position: static; /* Reset position to default */
+}
+
+/* Update buttons to be horizontal and elongated */
+.circular-button {
+  width: 150px; /* Make buttons elongated */
+  height: 50px; /* Adjust height for horizontal layout */
+  border-radius: 25px; /* Rounded corners */
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem; /* Increase font size */
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.circular-button:hover {
+  background-color: #555;
 }
 
 @media (max-width: 768px) {
@@ -76,5 +173,9 @@ h1 {
 
   .details {
     font-size: 1rem;
+  }
+
+  .back-button, .menu-button {
+    font-size: 1.2rem;
   }
 }
