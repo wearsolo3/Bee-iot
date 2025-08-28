@@ -35,6 +35,7 @@ void handleRoot() {
 void handleGetSensor() {
   float humidity = readHumidity();
   String json = "{\"humidity\": " + String(humidity) + "}";
+  server.sendHeader("Access-Control-Allow-Origin", "*"); // Allow CORS
   server.send(200, "application/json", json);
 }
 
