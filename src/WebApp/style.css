@@ -231,6 +231,43 @@ input:checked + .slider:before {
   transform: translateX(20px);
 }
 
+/* Adjust bottom menu to fill the entire bottom of the screen */
+.button-container {
+  display: flex;
+  background-color: black;
+  width: 100%; /* Fill the entire width */
+  height: 60px; /* Increase height */
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 0; /* Remove rounded corners */
+  position: fixed;
+  bottom: 0; /* Stick to the bottom */
+  left: 0;
+}
+
+.button {
+  outline: 0 !important;
+  border: 0 !important;
+  width: 50px; /* Increase button size */
+  height: 50px; /* Increase button size */
+  border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: all ease-in-out 0.3s;
+  cursor: pointer;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+}
+
+.icon {
+  font-size: 24px; /* Increase icon size */
+}
+
 @media (max-width: 768px) {
   h1 {
     font-size: 1.5rem;
