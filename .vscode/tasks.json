@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Upload HR202 Test",
+			"type": "shell",
+			"command": "platformio run --target upload",
+			"args": [],
+			"isBackground": false,
+			"group": "build"
+		}
+	]
+}
